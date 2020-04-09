@@ -20,8 +20,8 @@ function srum_add_Admin_Menu(){
     );
     $hook_new=add_submenu_page(
         'srum_inbox',
-        'پیام جدید',
-        'پیام جدید',
+        'ایجاد پیام جدید',
+        'ایجاد پیام جدید',
         'read',
         'srum_new',
         function(){include_once(SRUM_ADMIN_VIEW.'new.php');}        
