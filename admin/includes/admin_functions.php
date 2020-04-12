@@ -10,7 +10,7 @@ function srum_add_Admin_Menu(){
         SRUM_ADMIN_IMG.'email_icon.png',
         '15.69'
     );
-    $hook_send=add_submenu_page(
+    $hook_sent=add_submenu_page(
         'srum_inbox',
         'پیام های ارسالی',
         'پیام های ارسالی',
@@ -18,6 +18,10 @@ function srum_add_Admin_Menu(){
         'srum_sent',
         function(){include_once(SRUM_ADMIN_VIEW.'inbox.php');}
     );
+
+    add_action( "admin_head-{$hook_inbox}", "srum_add_Styles" );
+    add_action( "admin_head-{$hook_sent}", "srum_add_Styles" );
+    
     $hook_new=add_submenu_page(
         'srum_inbox',
         'ایجاد پیام جدید',
@@ -33,7 +37,18 @@ function srum_add_Admin_Menu(){
         'administrator',
         'srum_setting',
         function(){include_once(SRUM_ADMIN_VIEW.'setting.php');}        
-    );
-
-
+    );  
+}
+function srum_add_Styles(){
+    echo <<<CSS
+    <style type="text/css">
+.srum-message-status{
+    border-radius:3px;
+    padding:10px 15px;
+    margin:10px;
+    border:1px solid #cac1c1;
+    background-color:#e8e8e8e;
+}
+    </style>
+CSS;
 }

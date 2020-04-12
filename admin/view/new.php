@@ -1,4 +1,4 @@
-<div class="wrap">
+<div class="wrap" style="background: url(<?php echo SRUM_ADMIN_IMG.'communication.png'; ?>) no-repeat left bottom">
     <h2>ارسال پیام جدید</h2>
     <?php 
         if(isset($_POST['srum_new_user_send_button'])){
